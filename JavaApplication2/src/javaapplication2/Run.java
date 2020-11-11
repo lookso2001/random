@@ -21,7 +21,7 @@ public class Run {
     }
     public static void main(String[] args) {
         Restaurant r1 = new Restaurant("FiveStart Chicken", 50);
-        Restaurant r2 = new Restaurant("KFC", 150);
+        Restaurant r2 = new Restaurant("KFC", 149);
         Restaurant r3 = new Restaurant("Statafe'", 200);
         Restaurant r4 = new Restaurant("Yayoi", 150);
         Restaurant r5 = new Restaurant("MacDonald", 150);
@@ -32,7 +32,7 @@ public class Run {
         Restaurant r10 = new Restaurant("MK", 500);
         Restaurant r11 = new Restaurant("Shabu Lab", 499);
         Restaurant r12 = new Restaurant("Sushihiro",1000 );
-        Restaurant r13 = new Restaurant("Ramen'", 359);
+        Restaurant r13 = new Restaurant("Ramen", 359);
         Restaurant r14 = new Restaurant("Pizza", 599);
         Restaurant r15 = new Restaurant("Berger king", 259);
         Restaurant r16 = new Restaurant("Paper lunch", 380);
