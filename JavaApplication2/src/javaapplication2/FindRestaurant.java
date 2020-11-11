@@ -1,7 +1,5 @@
 package javaapplication2;
 
-import rip.Restaurant;
-
 public class FindRestaurant {
 
     private Restaurant restaurantlist[];
