@@ -6,7 +6,7 @@ public class FindRestaurant {
     private int count = 0;
 
     public FindRestaurant() {
-        this.restaurantlist = new Restaurant[5]; //default
+        this.restaurantlist = new Restaurant[20]; //default
     }
 
     public FindRestaurant(int r) {
