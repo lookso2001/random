@@ -64,7 +64,7 @@ public class Run {
         //System.out.println(fr);
         //fr.removeRestaurant(r1.getName());
         //fr.removeRestaurant(r4.getName());
-        int a = menu();
+             int a = menu();
         //System.out.println(a);
         switch(a) {
             case 0:
@@ -79,7 +79,12 @@ public class Run {
             case 3: 
                 list();
                 break;
+             default:
+                System.out.println("Not found");
+                break;
         }
+        
+       
     }
     public static void Scan() {
         Scanner scr = new Scanner(System.in);
