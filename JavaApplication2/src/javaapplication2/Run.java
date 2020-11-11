@@ -25,7 +25,17 @@ public class Run {
         Restaurant r3 = new Restaurant("Statafe'", 200);
         Restaurant r4 = new Restaurant("Yayoi", 150);
         Restaurant r5 = new Restaurant("MacDonald", 150);
+        Restaurant r6 = new Restaurant("Chester", 100);
+        Restaurant r7 = new Restaurant("Sizzler", 250); 
+        Restaurant r8 = new Restaurant("Bonchon", 350);
+        Restaurant r9 = new Restaurant("Bar-B-Q", 450);
+        Restaurant r10 = new Restaurant("MK", 500);
         //FindRestaurant fr = new FindRestaurant();
+        fr.addRestaurant(r10);
+        fr.addRestaurant(r9);
+        fr.addRestaurant(r8);
+        fr.addRestaurant(r7);
+        fr.addRestaurant(r6);
         fr.addRestaurant(r5);
         fr.addRestaurant(r4);
         fr.addRestaurant(r3);
