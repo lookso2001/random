@@ -1,15 +1,15 @@
 package javaapplication2;
 
 public class Restaurant {
-    private String name;
+    private RestaurantName name;
     private int price;
     
-    public Restaurant(String name,int price){
+    public Restaurant(RestaurantName name,int price){
     this.name =name;
     this.price = price;
     }
 
-    public String getName() {
+    public RestaurantName getName() {
     return name;
     }
 

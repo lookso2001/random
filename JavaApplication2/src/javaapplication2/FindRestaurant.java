@@ -1,25 +1,22 @@
 package javaapplication2;
 
+import java.util.Scanner;
+
+
 public class FindRestaurant {
 
     private Restaurant restaurantlist[];
     private int count = 0;
-
+    private final int[] price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399,699};
+    
     public FindRestaurant() {
         this.restaurantlist = new Restaurant[20]; //default
-    }
-
-    public FindRestaurant(int r) {
-        this.restaurantlist = new Restaurant[r]; //input
+        for(int i=0;i<RestaurantName.values().length;i++){
+           restaurantlist[i] = new Restaurant(RestaurantName.values()[i],price[i]);
+           count++;
+        }
     }
     
-//    public static Restaurant[] getRestaurant(){
-//     Restaurant[] restaurant = new Restaurant[2];
-//     restaurant[0] = new Restaurant("Copper",1000);
-//     restaurant[1] = new Restaurant("Bonchon",200);
-//     return restaurant;    
-//    }
-//                
     public String PickRestaurant(int price) {
         Restaurant rest[] = new Restaurant[this.count]; //new restaurant arrays
         StringBuilder str = new StringBuilder();
@@ -50,46 +47,61 @@ public class FindRestaurant {
         }
         return str.toString();
     }
-
-    public boolean isFull() {
-        return restaurantlist.length == this.count; //length of restaurantlist = count 
+ 
+   public  void Scan() {
+        Scanner scr = new Scanner(System.in);
+        System.out.print("Budget : ");
+        int num = scr.nextInt();
+        //System.out.println(fr);
+        System.out.println("Your Restaurant : " + PickRestaurant(num));
+        //System.out.println(fr.PickRestaurant(170));
     }
-
-    public boolean addRestaurant(Restaurant r) {
-        if (!isFull() && r != null) {
-            restaurantlist[count] = r;
-            count++;
-            return true;
+    public void list(){
+        Scanner scr = new Scanner(System.in);
+        System.out.print("Budget : ");
+        int number = scr.nextInt();
+        System.out.println(listRestaurant(number));
+    }
+     public int menu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("M e n u :");
+        System.out.println("--------------------------");
+        System.out.println("1) List of Restaurant");
+        System.out.println("2) Random Restaurant");
+        System.out.println("3) List on Budget");
+        System.out.println("--------------------------");
+        System.out.println("0) Exit\n");
+        System.out.print("Select your choice: ");
+        int selected = sc.nextInt();
+        sc.nextLine();
+        return selected;
+    }
+     public void Case(){
+         while(true){
+            int a = menu();
+        switch(a) {
+            case 0:
+                System.out.println("Exit");
+                break;
+            case 1:
+                System.out.println(toString());
+                break;
+            case 2:
+                Scan();
+                break;
+            case 3: 
+                list();
+                break;
+             default:
+                System.out.println("Not found");
+                break;
         }
-        return false;
-    }
-
-    public boolean removeRestaurant(String rname) {
-        if (rname != null) {
-            for (int i = 0; i < this.count; i++) {
-                if (rname == restaurantlist[i].getName()) {
-                    restaurantlist[i] = null;
-                    compactArray(restaurantlist, i);
-                    count--;
-                }
-            }
-            return true;
+        if(a == 0) break;
         }
-        return false;
+       
     }
-    public Restaurant[] getRestaurantlist() {
-        return restaurantlist;
-    }  
+     
     
-   private boolean compactArray(Restaurant r[], int j) {
-        for (int i = j; i < restaurantlist.length; i++) {
-            if (i == restaurantlist.length - 1) {
-                return false;
-            }
-            restaurantlist[i] = restaurantlist[i + 1];
-        }
-        return true;
-    }
   @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
