@@ -7,48 +7,48 @@ public class FindRestaurant {
 
     private Restaurant restaurantlist[];
     private int count = 0;
-    private final int[] price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399,699};
+    private final int[] Price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399,699};
     
     public FindRestaurant() {
-        this.restaurantlist = new Restaurant[20]; //default
+        this.restaurantlist = new Restaurant[20];
         for(int i=0;i<RestaurantName.values().length;i++){
-           restaurantlist[i] = new Restaurant(RestaurantName.values()[i],price[i]);
+           restaurantlist[i] = new Restaurant(RestaurantName.values()[i],Price[i]);
            count++;
         }
     }
-    
-    public String PickRestaurant(int price) {
-        Restaurant rest[] = new Restaurant[this.count]; //new restaurant arrays
+   
+    public String PickRestaurant(int Budget) {
+        Restaurant rest[] = new Restaurant[this.count]; 
         StringBuilder str = new StringBuilder();
-        int count = 0;
+        int money = 0;
         for (int i = 0; i < this.count; i++) {
-            if (this.restaurantlist[i].getPrice() <= price) { //if restaurant+price <= Budget
-                rest[count] = restaurantlist[i];   //restaurant that lower than budget
-                count++;
+            if (this.restaurantlist[i].getPrice() <= Budget) {
+                rest[money] = restaurantlist[i];
+                money++;
             }
         }
-        if (count != 0) { 
-            int ran = (int) Math.floor(Math.random() * count); //random
-            str.append(rest[ran].getName() + " " + rest[ran].getPrice()); //restaurantname + price output
+        if (money != 0) { 
+            int ran = (int) Math.floor(Math.random() * money);
+            str.append(rest[ran].getName() + " " + rest[ran].getPrice());
         } else {
             str.append("Not Found");
         }
-
         return str.toString();
     }
-    public String listRestaurant(int price){
+    
+    public String listBudget(int Budget){
         StringBuilder str = new StringBuilder();
         str.append("Rest List");
         str.append("\n---------------------------------------\n");
         for (int i = 0; i < this.count; i++) {
-            if (this.restaurantlist[i].getPrice() <= price) { //if restaurant+price <= Budget
+            if (this.restaurantlist[i].getPrice() <= Budget) {
                 str.append(restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
             }
         }
         return str.toString();
     }
  
-   public  void Scan() {
+   public  void RandomRestaurant() {
         Scanner scr = new Scanner(System.in);
         System.out.print("Budget : ");
         int num = scr.nextInt();
@@ -56,11 +56,11 @@ public class FindRestaurant {
         System.out.println("Your Restaurant : " + PickRestaurant(num));
         //System.out.println(fr.PickRestaurant(170));
     }
-    public void list(){
+    public void Budget(){
         Scanner scr = new Scanner(System.in);
         System.out.print("Budget : ");
         int number = scr.nextInt();
-        System.out.println(listRestaurant(number));
+        System.out.println(listBudget(number));
     }
      public int menu() {
         Scanner sc = new Scanner(System.in);
@@ -87,18 +87,17 @@ public class FindRestaurant {
                 System.out.println(toString());
                 break;
             case 2:
-                Scan();
+                RandomRestaurant();
                 break;
             case 3: 
-                list();
+                Budget();
                 break;
              default:
                 System.out.println("Not found");
                 break;
         }
-        if(a == 0) break;
-        }
-       
+         if(a == 0) break;
+         }
     }
      
     
