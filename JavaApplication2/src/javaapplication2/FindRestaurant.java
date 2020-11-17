@@ -37,15 +37,25 @@ public class FindRestaurant {
     }
     
     public String listBudget(int Budget){
-        StringBuilder str = new StringBuilder();
-        str.append("Rest List");
-        str.append("\n---------------------------------------\n");
-        for (int i = 0; i < this.count; i++) {
+//        StringBuilder str = new StringBuilder();
+//        str.append("Rest List");
+//        str.append("\n---------------------------------------\n");
+//        for (int i = 0; i < this.count; i++) {
+//            if (this.restaurantlist[i].getPrice() <= Budget) {
+//                str.append(restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
+//            }
+//        }
+//        return str.toString();
+          String str = "";
+          str += "rest list";
+          str +="\n---------------------------------------\n";
+          for (int i = 0; i < this.count; i++) {
             if (this.restaurantlist[i].getPrice() <= Budget) {
-                str.append(restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
+                str += (restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
             }
         }
-        return str.toString();
+        return str;
+          
     }
  
    public  void RandomRestaurant() {
