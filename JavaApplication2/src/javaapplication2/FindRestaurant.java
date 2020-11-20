@@ -1,23 +1,24 @@
 package javaapplication2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
 
 public class FindRestaurant {
 
     private Restaurant restaurantlist[];
     private int count = 0;
-    private final int[] Price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399,699};
+    private int[] Price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399,699};
+    private String[] Rname = {"FiveStart Chicken","KFC","Statafe","Yayoi","MacDonald","Chester","Sizzler","Bonchon","BarB Q",
+    "MK","Shabu Lab","Sushihiro","Ramen","Pizza","Berger king","Paper lunch","Katsuya","A&W","Hot Pot Buffet","Tossmor"};
     
     public FindRestaurant() {
         this.restaurantlist = new Restaurant[20];
-        for(int i=0;i<RestaurantName.values().length;i++){
-           restaurantlist[i] = new Restaurant(RestaurantName.values()[i],Price[i]);
+        for(int i=0;i<this.Rname.length;i++){
+           restaurantlist[i] = new Restaurant(Rname[i],Price[i]);
            count++;
         }
     }
-   
-    public String PickRestaurant(int Budget) {
+    public String PickRestaurant(int Budget) { //2
         Restaurant rest[] = new Restaurant[this.count]; 
         StringBuilder str = new StringBuilder();
         int money = 0;
@@ -34,85 +35,43 @@ public class FindRestaurant {
             str.append("Not Found");
         }
         return str.toString();
-    }
-    
-    public String listBudget(int Budget){
-//        StringBuilder str = new StringBuilder();
-//        str.append("Rest List");
-//        str.append("\n---------------------------------------\n");
-//        for (int i = 0; i < this.count; i++) {
-//            if (this.restaurantlist[i].getPrice() <= Budget) {
-//                str.append(restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
-//            }
-//        }
-//        return str.toString();
+    } 
+    public String listBudget(int Budget){ //3
           String str = "";
-          str += "rest list";
+          str += "LIST :";
           str +="\n---------------------------------------\n";
           for (int i = 0; i < this.count; i++) {
             if (this.restaurantlist[i].getPrice() <= Budget) {
                 str += (restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
             }
         }
-        return str;
-          
+        return str;    
     }
- 
-   public  void RandomRestaurant() {
+    public void AddRestaurent(){ //4
+        Scanner scr = new Scanner(System.in); 
+        System.out.print("Restaurant name :");
+        String Name = scr.nextLine(); 
+        String[] Newname  = new String[this.Rname.length+1];
+        for(int i=0;i<this.Rname.length;i++){
+        Newname[i] = Rname[i];       
+      }
+        Newname[Newname.length-1]= Name;
+        this.Rname = Newname;
+    }
+    public void AddPrice(){
         Scanner scr = new Scanner(System.in);
-        System.out.print("Budget : ");
-        int num = scr.nextInt();
-        //System.out.println(fr);
-        System.out.println("Your Restaurant : " + PickRestaurant(num));
-        //System.out.println(fr.PickRestaurant(170));
-    }
-    public void Budget(){
-        Scanner scr = new Scanner(System.in);
-        System.out.print("Budget : ");
-        int number = scr.nextInt();
-        System.out.println(listBudget(number));
-    }
-     public int menu() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("M e n u :");
-        System.out.println("--------------------------");
-        System.out.println("1) List of Restaurant");
-        System.out.println("2) Random Restaurant");
-        System.out.println("3) List on Budget");
-        System.out.println("--------------------------");
-        System.out.println("0) Exit\n");
-        System.out.print("Select your choice: ");
-        int selected = sc.nextInt();
-        sc.nextLine();
-        return selected;
-    }
-     public void Case(){
-         while(true){
-            int a = menu();
-        switch(a) {
-            case 0:
-                System.out.println("Exit");
-                break;
-            case 1:
-                System.out.println(toString());
-                break;
-            case 2:
-                RandomRestaurant();
-                break;
-            case 3: 
-                Budget();
-                break;
-             default:
-                System.out.println("Not found");
-                break;
-        }
-         if(a == 0) break;
-         }
-    }
-     
-    
+       System.out.print("min price :");
+       int num = scr.nextInt();
+       int[] Newprice  = new int[this.Price.length+1];
+        for(int i=0;i<this.Price.length;i++){
+        Newprice[i] = Price[i];       
+      }
+        Newprice[Newprice.length - 1]= num;
+        this.Price= Newprice;
+        
+      }
   @Override
-    public String toString() {
+    public String toString() {//1
         StringBuilder str = new StringBuilder();
         str.append("Rest List");
         str.append("\n---------------------------------------\n");
