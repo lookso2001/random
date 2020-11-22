@@ -1,5 +1,6 @@
 package javaapplication2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindRestaurant {
@@ -16,18 +17,21 @@ public class FindRestaurant {
            count++;
         }
     }
+//    public Addrestaurant(){
+//        
+//    }
     public String PickRestaurant(int Budget) { //2
         Restaurant rest[] = new Restaurant[this.count]; 
         StringBuilder str = new StringBuilder();
-        int money = 0;
+        int j = 0;
         for (int i = 0; i < this.count; i++) {
             if (this.restaurantlist[i].getPrice() <= Budget) {
-                rest[money] = restaurantlist[i];
-                money++;
+                rest[j] = restaurantlist[i];
+                j++;
             }
         }
-        if (money != 0) { 
-            int ran = (int) Math.floor(Math.random() * money);
+        if (Budget != 0) { 
+            int ran = (int) Math.floor(Math.random()*j);
             str.append(rest[ran].getName() + " " + rest[ran].getPrice());
         } else {
             str.append("Not Found");
@@ -49,24 +53,33 @@ public class FindRestaurant {
         Scanner scr = new Scanner(System.in); 
         System.out.print("Restaurant name :");
         String Name = scr.nextLine(); 
-        String[] Newname  = new String[this.Rname.length+1];
-        for(int i=0;i<this.Rname.length;i++){
-           Newname[i] = Rname[i];       
-      }
-        Newname[Newname.length-1]= Name;
-        this.Rname = Newname;
+        int num = scr.nextInt();
+        Restaurant rnew = new Restaurant(Name, num);
+        Restaurant rlist[] = new Restaurant[this.restaurantlist.length+1];
+        for (int i = 0; i < restaurantlist.length; i++) {
+            rlist[i] = this.restaurantlist[i];
+        }
+        this.restaurantlist = rlist;
+        this.restaurantlist[this.restaurantlist.length-1] = rnew ;
+        this.count++;
+//        String[] Newname  = new String[this.Rname.length+1];
+//        for(int i=0;i<this.Rname.length;i++){
+//           Newname[i] = Rname[i];       
+//      }
+//        Newname[Newname.length-1]= Name;
+//        this.Rname = Newname;
     }
-    public void AddPrice(){//4
-        Scanner scr = new Scanner(System.in);
-       System.out.print("min price :");
-       int num = scr.nextInt();
-       int[] Newprice  = new int[this.Price.length+1];
-        for(int i=0;i<this.Price.length;i++){
-        Newprice[i] = Price[i];       
-      }
-        Newprice[Newprice.length - 1]= num;
-        this.Price= Newprice;        
-      }
+//    public void AddPrice(){//4
+//        Scanner scr = new Scanner(System.in);
+//       System.out.print("min price :");
+//       int num = scr.nextInt();
+//       int[] Newprice  = new int[this.Price.length+1];
+//        for(int i=0;i<this.Price.length;i++){
+//        Newprice[i] = Price[i];       
+//      }
+//        Newprice[Newprice.length - 1]= num;
+//        this.Price= Newprice;        
+//      }
 //    public void NewArray() {
 //        this.restaurantlist = new Restaurant[this.count];
 //        for(int i=0;i<Newname.length;i++){
@@ -80,8 +93,8 @@ public class FindRestaurant {
         StringBuilder str = new StringBuilder();
         str.append("Rest List");
         str.append("\n---------------------------------------\n");
-        for (int i = 0; i < Rname.length; i++) {
-            str.append(Rname[i] + " : " +Price[i] + "\n");
+        for (int i = 0; i < this.restaurantlist.length; i++) {
+            str.append(this.restaurantlist[i].getName()+" : "+this.restaurantlist[i].getPrice()+"\n");
         }
         return str.toString();
     }

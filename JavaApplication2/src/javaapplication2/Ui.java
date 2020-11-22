@@ -52,7 +52,7 @@ public class Ui {
                 break;
             case 4:
                 fr.AddRestaurent();
-                fr.AddPrice();
+                //fr.AddPrice();
                 break;
             case 5:
               //  remove();
