@@ -18,14 +18,6 @@ public class Ui {
         int num = scr.nextInt();
         System.out.println(fr.listBudget(num));
     }
-//     public void Add(){//4  
-//        Scanner scr = new Scanner(System.in);    
-//        System.out.print("Restaurant name :");
-//        String Name = scr.nextLine();     
-//        System.out.print("min price :");
-//        int num = scr.nextInt();
-//               
-//    }
      public int menu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("MENU :");
