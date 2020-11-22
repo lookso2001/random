@@ -1,5 +1,5 @@
 package javaapplication2;
-public class Run {
+public class RestaurantRun {
       
     public static void main(String[] args) { 
      FindRestaurant fr = new FindRestaurant();

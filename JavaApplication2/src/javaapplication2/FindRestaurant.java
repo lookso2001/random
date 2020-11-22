@@ -42,9 +42,11 @@ public class FindRestaurant {
         str.append("\n---------------------------------------\n");
         for (int i = 0; i < this.count; i++) {
             if (this.restaurantlist[i].getPrice() <= Budget) {
-                str.append(restaurantlist[i].getName() + " : " + restaurantlist[i].getPrice() + "\n"); 
+                str.append(restaurantlist[i].getName() + " : " 
+                        + restaurantlist[i].getPrice() 
+                        + "\n"); 
             }
-        }
+       }
         return str.toString();
     }
  
