@@ -7,9 +7,7 @@ public class Ui {
         Scanner scr = new Scanner(System.in);
         System.out.print("Budget : ");
         int num = scr.nextInt();
-        //System.out.println(fr);
         System.out.println("Your Restaurant : " + fr.PickRestaurant(num));
-        //System.out.println(fr.PickRestaurant(170));
     }
     public void Budget(){//3
         Scanner scr = new Scanner(System.in);

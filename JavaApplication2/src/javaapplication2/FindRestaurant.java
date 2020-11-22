@@ -7,8 +7,7 @@ public class FindRestaurant {
     private Restaurant restaurantlist[];
     private int count = 0;
     private int[] Price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399};
-    private String[] Rname = {"FiveStart Chicken","KFC","Statafe","Yayoi","MacDonald","Chester","Sizzler","Bonchon","BarB Q",
-    "MK","Shabu Lab","Sushihiro","Ramen","Pizza","Berger king","Paper lunch","Katsuya","A&W","Hot Pot Buffet","Tossmor"};
+    private String[] Rname = {"FiveStart Chicken","KFC","Statafe","Yayoi","MacDonald","Chester","Sizzler","Bonchon","BarB Q","MK","Shabu Lab","Sushihiro","Ramen","Pizza","Berger king","Paper lunch","Katsuya","A&W","Hot Pot Buffet","Tossmor"};
     
     public FindRestaurant() {
         this.restaurantlist = new Restaurant[20];
@@ -17,9 +16,6 @@ public class FindRestaurant {
            count++;
         }
     }
-//    public Addrestaurant(){
-//        
-//    }
     public String PickRestaurant(int Budget) { //2
         Restaurant rest[] = new Restaurant[this.count]; 
         StringBuilder str = new StringBuilder();
@@ -38,7 +34,7 @@ public class FindRestaurant {
         }
         return str.toString();
     } 
-    public String listBudget(int Budget){ //3
+    public String listBudget(int Budget){//3
           String str = "";
           str += "LIST :";
           str +="\n---------------------------------------\n";
@@ -49,7 +45,7 @@ public class FindRestaurant {
         }
         return str;    
     }
-    public void AddRestaurent(){ //4
+    public void AddRestaurent(){//4
         Scanner scr = new Scanner(System.in); 
         System.out.print("Restaurant name :");
         String Name = scr.nextLine(); 
