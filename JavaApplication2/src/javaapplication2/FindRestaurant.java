@@ -3,7 +3,6 @@ package javaapplication2;
 import java.util.Scanner;
 
 public class FindRestaurant {
-
     private Restaurant restaurantlist[];
     private int count = 0;
     private int[] Price = {50,149,200,150,150,100,250,350,450,500,499,100,359,359,599,259,380,179,399,399};
@@ -52,7 +51,7 @@ public class FindRestaurant {
         String Name = scr.nextLine(); 
         String[] Newname  = new String[this.Rname.length+1];
         for(int i=0;i<this.Rname.length;i++){
-        Newname[i] = Rname[i];       
+           Newname[i] = Rname[i];       
       }
         Newname[Newname.length-1]= Name;
         this.Rname = Newname;

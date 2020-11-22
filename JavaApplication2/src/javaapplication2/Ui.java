@@ -2,8 +2,7 @@ package javaapplication2;
 import java.util.Scanner;
 public class Ui {
     
-    FindRestaurant fr = new FindRestaurant();
-    
+    public FindRestaurant fr = new FindRestaurant();
        public  void RandomRestaurant() {//2
         Scanner scr = new Scanner(System.in);
         System.out.print("Budget : ");
