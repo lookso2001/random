@@ -49,7 +49,7 @@ public class FindRestaurant {
         Scanner scr = new Scanner(System.in); 
         System.out.print("Restaurant name :");
         String Name = scr.nextLine(); 
-        System.out.println("Restaurant Price :");
+        System.out.print("Restaurant Price :");
         int num = scr.nextInt();
         Restaurant rnew = new Restaurant(Name, num);
         Restaurant rlist[] = new Restaurant[this.restaurantlist.length+1];

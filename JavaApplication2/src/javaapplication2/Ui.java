@@ -23,7 +23,6 @@ public class Ui {
         System.out.println("2) Random Restaurant");
         System.out.println("3) List on Budget");
         System.out.println("4) Add Restaurant");
-        System.out.println("5) Remove Restaurant");
         System.out.println("--------------------------");
         System.out.println("0) Exit\n");
         System.out.print("Select your choice: ");
@@ -50,9 +49,6 @@ public class Ui {
                 break;
             case 4:
                 fr.AddRestaurent();
-                break;
-            case 5:
-              //  remove();
                 break;
              default:
                 System.out.println("Not found");
