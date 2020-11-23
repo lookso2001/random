@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Scann {
     
     public FindRestaurant fr = new FindRestaurant();
+    
        public  void RandomRestaurant() {//2
         Scanner scr = new Scanner(System.in);
         System.out.print("Budget : ");
