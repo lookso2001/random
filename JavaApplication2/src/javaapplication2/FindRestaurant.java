@@ -49,6 +49,7 @@ public class FindRestaurant {
         Scanner scr = new Scanner(System.in); 
         System.out.print("Restaurant name :");
         String Name = scr.nextLine(); 
+        System.out.println("Restaurant Price :");
         int num = scr.nextInt();
         Restaurant rnew = new Restaurant(Name, num);
         Restaurant rlist[] = new Restaurant[this.restaurantlist.length+1];
@@ -58,32 +59,7 @@ public class FindRestaurant {
         this.restaurantlist = rlist;
         this.restaurantlist[this.restaurantlist.length-1] = rnew ;
         this.count++;
-//        String[] Newname  = new String[this.Rname.length+1];
-//        for(int i=0;i<this.Rname.length;i++){
-//           Newname[i] = Rname[i];       
-//      }
-//        Newname[Newname.length-1]= Name;
-//        this.Rname = Newname;
     }
-//    public void AddPrice(){//4
-//        Scanner scr = new Scanner(System.in);
-//       System.out.print("min price :");
-//       int num = scr.nextInt();
-//       int[] Newprice  = new int[this.Price.length+1];
-//        for(int i=0;i<this.Price.length;i++){
-//        Newprice[i] = Price[i];       
-//      }
-//        Newprice[Newprice.length - 1]= num;
-//        this.Price= Newprice;        
-//      }
-//    public void NewArray() {
-//        this.restaurantlist = new Restaurant[this.count];
-//        for(int i=0;i<Newname.length;i++){
-//           restaurantlist[i] = new Restaurant(Newname[i],Newprice[i]);
-//           count++;
-//        }
-//    }
-    
   @Override
     public String toString() {//1
         StringBuilder str = new StringBuilder();
