@@ -51,6 +51,7 @@ public class FindRestaurant {
         String Name = scr.nextLine(); 
         System.out.print("Restaurant Price :");
         int num = scr.nextInt();
+        
         Restaurant rnew = new Restaurant(Name, num);
         Restaurant rlist[] = new Restaurant[this.restaurantlist.length+1];
         for (int i = 0; i < restaurantlist.length; i++) {

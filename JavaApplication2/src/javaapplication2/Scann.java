@@ -1,6 +1,6 @@
 package javaapplication2;
 import java.util.Scanner;
-public class Ui {
+public class Scann {
     
     public FindRestaurant fr = new FindRestaurant();
        public  void RandomRestaurant() {//2
